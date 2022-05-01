@@ -14,9 +14,14 @@ public class ProjetoController {
 
     private ProjetoService projetoService;
 
-    @PostMapping()
+    @PostMapping
     public Projeto salvar(@RequestBody Projeto projeto) {
         return projetoService.salvar(projeto);
+    }
+
+    @GetMapping
+    public List<Projeto> buscarTodos() {
+        return projetoService.buscarTodos();
     }
 
 }
