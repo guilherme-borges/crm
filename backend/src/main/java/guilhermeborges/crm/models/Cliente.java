@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "projetos")
-public class Projeto {
+@Table(name = "clientes")
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +20,10 @@ public class Projeto {
 
     @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
+    private BigDecimal valor;
+
+    @Column(nullable = false)
+    private String status;
 }
